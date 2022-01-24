@@ -1,9 +1,5 @@
-#include "bits/stdc++.h"
+#include <bits/stdc++.h>
 using namespace std;
-
-#define ll long long
-#define ar array
-#define sz(x) (int) (x).size()
 
 const int mxn=1e3;
 const int MXPATH = 5e3;
@@ -21,42 +17,6 @@ bool in_puzzle(int r, int c) {
 }
 
 void solve() {
-    getline(cin,file_path);
-    const char * path=file_path.c_str();
-    freopen(path, "r", stdin);
-    for(int i=0;;i++) {
-        if(i>=mxn) {
-            cout <<"[ERROR] Ukuran puzzle terlalu besar\n";
-            return;
-        }
-        string s;
-        getline(cin,s);
-        if(s.find(' ')!=string::npos) {
-            puzzle[i] = s;
-            while(puzzle[i].find(' ')!=string::npos) {
-                puzzle[i].erase(puzzle[i].find(' '), 1);
-            }
-            // cout <<puzzle[i] <<"\n";
-        } else {
-            n = i;
-            m = puzzle[n-1].length();
-            cout <<s;
-            break; // asumsi ada baris kosong dan word yang akan dicari
-        }
-    }
-    // cout <<n <<" " <<m;
-    string s;
-    int i = 0;
-    while(getline(cin,s)) {
-        word[i] = s;
-        i++;
-    }
-    ct_w = i;
-    // cout <<word[0] <<"\n";
-    // cout <<word[1] <<"\n";
-    // cout <<word[2] <<"\n";
-    // cout <<"ct_w: " <<ct_w <<"\n";
-
     int count_compare=0;
     clock_t start, end;
     start = clock();
@@ -109,5 +69,40 @@ void solve() {
 }
 
 int main() {
+    getline(cin,file_path);
+    const char * path=file_path.c_str();
+    freopen(path, "r", stdin);
+    for(int i=0;;i++) {
+        if(i>=mxn) {
+            cout <<"[ERROR] Ukuran puzzle terlalu besar\n";
+            return 0;
+        }
+        string s;
+        getline(cin,s);
+        if(s.find(' ')!=string::npos) {
+            puzzle[i] = s;
+            while(puzzle[i].find(' ')!=string::npos) {
+                puzzle[i].erase(puzzle[i].find(' '), 1);
+            }
+            // cout <<puzzle[i] <<"\n";
+        } else {
+            n = i;
+            m = puzzle[n-1].length();
+            cout <<s;
+            break; // asumsi ada baris kosong dan word yang akan dicari
+        }
+    }
+    // cout <<n <<" " <<m;
+    string s;
+    int i = 0;
+    while(getline(cin,s)) {
+        word[i] = s;
+        i++;
+    }
+    ct_w = i;
+    // cout <<word[0] <<"\n";
+    // cout <<word[1] <<"\n";
+    // cout <<word[2] <<"\n";
+    // cout <<"ct_w: " <<ct_w <<"\n";    
     solve();
 }
