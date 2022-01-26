@@ -6,7 +6,7 @@ const int mxn=200;
 // Transisi baris dan kolom untuk setiap 8 arah
 const int dr[8]= {-1,-1,0,1,1,1,0,-1}, dc[8]= {0,-1,-1,-1,0,1,1,1};
 // 12 pilihan warna untuk kata yang ditemukan
-char* clr[12] = {"\x1B[31m", "\x1B[32m", "\x1B[33m", "\x1B[34m", "\x1B[35m", "\x1B[36m", "\x1B[1m\x1B[31m", "\x1B[1m\x1B[32m", "\x1B[1m\x1B[33m", "\x1B[1m\x1B[34m", "\x1B[1m\x1B[35m", "\x1B[1m\x1B[36m"};
+const char* clr[12] = {"\x1B[31m", "\x1B[32m", "\x1B[33m", "\x1B[34m", "\x1B[35m", "\x1B[36m", "\x1B[1m\x1B[31m", "\x1B[1m\x1B[32m", "\x1B[1m\x1B[33m", "\x1B[1m\x1B[34m", "\x1B[1m\x1B[35m", "\x1B[1m\x1B[36m"};
 // warna putih untuk mereset mode print berwarna
 const char* RESET = "\x1B[0m";
 int n,m,ct_w;
@@ -14,7 +14,7 @@ string file_path;
 // puzzle sebagai matriks huruf, word sebagai daftar kata
 string puzzle[mxn], word[mxn]; 
 // color menyimpan warna setiap huruf dan diinisialisasi dengan warna putih
-vector<vector<char *>> color(mxn,vector<char *>(mxn,"\x1B[37m"));
+vector<vector<const char *>> color(mxn,vector<const char *>(mxn,"\x1B[37m"));
 int clridx=0; // counter untuk warna berikutnya
 
 bool in_puzzle(int r, int c) {
