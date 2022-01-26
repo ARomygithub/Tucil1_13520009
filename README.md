@@ -10,6 +10,6 @@ Program menyelesaikan masalah Word Search Puzzle dengan 8 kemungkinan arah. Prog
 * Compiler g++ terbaru
 
 ## Cara Menggunakan Program
-1. Compile program dengan command `g++ ../src/WordSearchSolver.cpp -o WordSearchSolver.exe` dengan terminal sebelumnya berada di dalam folder bin. Abaikan warning `-Wwrite-strings` yang muncul.
+1. Compile program dengan command `g++ ../src/WordSearchSolver.cpp -o WordSearchSolver.exe` dengan terminal sebelumnya berada di dalam folder bin.
 2. Jalankan program dengan `./WordSearchSolver.exe` atau `WordSearchSolver.exe` dalam folder bin. Program dapat berjalan pada terminal windows, vs code, maupun Ubuntu.
 3. Masukkan lokasi (_path_) file puzzle, contoh: `../test/small_1.in`, `../test/large_3.in`, dll.  
